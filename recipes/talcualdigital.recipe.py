@@ -12,5 +12,9 @@ class BasicUserRecipe1706819102(AutomaticNewsRecipe):
     remove_empty_feeds = True
 
     feeds          = [
-        ('main', 'https://talcualdigital.com/feed'),
+        ('Noticias', 'https://talcualdigital.com/noticias/feed/'),
+        ('A Fondo', 'https://talcualdigital.com/a-fondo/feed/'),
+        ('Lo Nuestro', 'https://talcualdigital.com/lo-nuestro/feed/'),
+        ('Opinión', 'https://talcualdigital.com/opinion/feed/'),
+        ('Migrantes', 'https://talcualdigital.com/migrantes/feed/'),
     ]
