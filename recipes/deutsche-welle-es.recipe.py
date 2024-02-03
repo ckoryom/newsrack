@@ -7,8 +7,8 @@ class DeutscheWelle_es(BasicNewsRecipe):
     publisher = 'Deutsche Welle'
     language = 'es'
 
-    oldest_article = 2
-    max_articles_per_feed = 50
+    oldest_article = 1
+    max_articles_per_feed = 100
     no_stylesheets = True
     remove_javascript = True
     remove_empty_feeds = True

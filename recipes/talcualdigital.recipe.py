@@ -4,7 +4,7 @@ from calibre.web.feeds.news import AutomaticNewsRecipe
 
 class BasicUserRecipe1706819102(AutomaticNewsRecipe):
     title          = 'TalCual Digital'
-    oldest_article = 2
+    oldest_article = 1
     max_articles_per_feed = 100
     auto_cleanup   = True
     language       = 'es'

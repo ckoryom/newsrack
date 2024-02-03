@@ -157,26 +157,26 @@ recipes: List[Recipe] = [
         enable_on=onlyon_weekdays([4]),
         timeout=360,
     ),
-    Recipe(
-        recipe="el_pais",
-        slug="el_pais",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        cover_options=CoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/El_Pais_logo_2007.svg/1024px-El_Pais_logo_2007.svg.png"
-        ),
-    ),
-    Recipe(
-        recipe="el-pais-semanal",
-        slug="el-pais-semanal",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        cover_options=CoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/El_Pais_logo_2007.svg/1024px-El_Pais_logo_2007.svg.png"
-        ),
-    ),
+    # Recipe(
+    #     recipe="el_pais",
+    #     slug="el_pais",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/El_Pais_logo_2007.svg/1024px-El_Pais_logo_2007.svg.png"
+    #     ),
+    # ),
+    # Recipe(
+    #     recipe="el-pais-semanal",
+    #     slug="el-pais-semanal",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/El_Pais_logo_2007.svg/1024px-El_Pais_logo_2007.svg.png"
+    #     ),
+    # ),
     # Recipe(
     #     recipe="eighteen-fortythree",
     #     slug="1843",
@@ -270,16 +270,16 @@ recipes: List[Recipe] = [
     #         logo_path_or_url="https://i0.wp.com/fulcrum.sg/wp-content/uploads/logo.png",
     #     ),
     # ),
-    Recipe(
-        recipe="guardian",
-        slug="guardian",
-        src_ext="mobi",
-        target_ext=["epub"],
-        category="News",
-        cover_options=CoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/The_Guardian.svg/1024px-The_Guardian.svg.png"
-        ),
-    ),
+    # Recipe(
+    #     recipe="guardian",
+    #     slug="guardian",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/The_Guardian.svg/1024px-The_Guardian.svg.png"
+    #     ),
+    # ),
     # Recipe(
     #     recipe="harpers-magazine",
     #     slug="harpers-magazine",
@@ -519,27 +519,41 @@ recipes: List[Recipe] = [
         category="Magazines",
         timeout=300,
         retry_attempts=0,
-        enable_on=onlyat_hours(list(range(18, 22))),
+        enable_on=first_n_days_of_month(1),
         cover_options=CoverOptions(
             logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
         ),
         tags=["nature", "science"],
     ),
-    Recipe(
-        recipe="nytimes-global",
-        slug="nytimes-global",
+        Recipe(
+        recipe="natgeohis",
+        slug="natgeohis",
         src_ext="mobi",
         target_ext=["epub"],
-        category="News",
-        timeout=900,
+        category="Magazines",
+        timeout=300,
         retry_attempts=0,
-        enable_on=onlyat_hours(
-            list(range(0, 8)) + list(range(12, 18)) + list(range(22, 24))
-        ),
+        enable_on=first_n_days_of_month(1),
         cover_options=CoverOptions(
-            logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
+            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
         ),
+        tags=["nature", "science"],
     ),
+    # Recipe(
+    #     recipe="nytimes-global",
+    #     slug="nytimes-global",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     category="News",
+    #     timeout=900,
+    #     retry_attempts=0,
+    #     enable_on=onlyat_hours(
+    #         list(range(0, 8)) + list(range(12, 18)) + list(range(22, 24))
+    #     ),
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
+    #     ),
+    # ),
     Recipe(
         recipe="nytimes-paper",
         slug="nytimes-print",
@@ -548,7 +562,6 @@ recipes: List[Recipe] = [
         category="News",
         timeout=1320,
         retry_attempts=0,
-        enable_on=onlyat_hours(list(range(8, 12))),
         cover_options=CoverOptions(
             logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
         ),
@@ -561,7 +574,7 @@ recipes: List[Recipe] = [
         category="Arts & Culture",
         timeout=300,
         retry_attempts=0,
-        enable_on=onlyat_hours(list(range(18, 22))),
+        enable_on=onlyon_weekdays([5]),
         cover_options=CoverOptions(
             logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
         ),
@@ -574,7 +587,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         category="Magazines",
         overwrite_cover=False,
-        enable_on=onlyon_weekdays([5]) and onlyat_hours(list(range(18, 22))),
+        enable_on=onlyon_weekdays([5]),
     ),
     # Recipe(
     #     recipe="paris-review-blog",
@@ -692,7 +705,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         category="Magazines",
         tags=["europe", "britain"],
-        enable_on=onlyon_weekdays([3, 4]),
+        enable_on=onlyon_weekdays([4]),
         overwrite_cover=False,
     ),
     Recipe(
@@ -701,7 +714,6 @@ recipes: List[Recipe] = [
         src_ext="mobi",
         target_ext=["epub"],
         category="News",
-        enable_on=onlyat_hours(list(range(8, 14))),
         cover_options=CoverOptions(
             logo_path_or_url="https://talcualdigital.com/wp-content/uploads/2019/04/logo_02.png"
         ),
@@ -713,7 +725,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         overwrite_cover=False,
         category="Magazines",
-        enable_on=onlyon_weekdays([3, 4, 5, 6], -4),
+        enable_on=onlyon_weekdays([0]),
     ),
     # Recipe(
     #     recipe="vox",
@@ -725,30 +737,30 @@ recipes: List[Recipe] = [
     #         logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vox_logo.svg/300px-Vox_logo.svg.png"
     #     ),
     # ),
-    Recipe(
-        recipe="wapo",
-        slug="wapo",
-        src_ext="mobi",
-        target_ext=["epub"],
-        timeout=600,
-        category="News",
-        cover_options=CoverOptions(
-            logo_path_or_url="https://www.washingtonpost.com/sf/brand-connect/dell-technologies/the-economics-of-change/media/wp_logo_black.png"
-        ),
-        enable_on=onlyat_hours(list(range(0, 8)) + list(range(12, 24))),
-    ),
-    Recipe(
-        recipe="wapo-paper",
-        slug="wapo-print",
-        src_ext="mobi",
-        target_ext=["epub"],
-        timeout=600,
-        category="News",
-        cover_options=CoverOptions(
-            logo_path_or_url="https://www.washingtonpost.com/sf/brand-connect/dell-technologies/the-economics-of-change/media/wp_logo_black.png"
-        ),
-        enable_on=onlyat_hours(list(range(8, 12))),
-    ),
+    # Recipe(
+    #     recipe="wapo",
+    #     slug="wapo",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     timeout=600,
+    #     category="News",
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://www.washingtonpost.com/sf/brand-connect/dell-technologies/the-economics-of-change/media/wp_logo_black.png"
+    #     ),
+    #     enable_on=onlyat_hours(list(range(0, 8)) + list(range(12, 24))),
+    # ),
+    # Recipe(
+    #     recipe="wapo-paper",
+    #     slug="wapo-print",
+    #     src_ext="mobi",
+    #     target_ext=["epub"],
+    #     timeout=600,
+    #     category="News",
+    #     cover_options=CoverOptions(
+    #         logo_path_or_url="https://www.washingtonpost.com/sf/brand-connect/dell-technologies/the-economics-of-change/media/wp_logo_black.png"
+    #     ),
+    #     enable_on=onlyat_hours(list(range(8, 12))),
+    # ),
     # Recipe(
     #     recipe="wired",
     #     slug="wired",
