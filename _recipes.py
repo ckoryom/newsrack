@@ -145,6 +145,7 @@ recipes: List[Recipe] = [
         cover_options=CoverOptions(
             logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Deutsche_Welle_Logo.svg/1024px-Deutsche_Welle_Logo.svg.png"
         ),
+        enable_on=(onlyat_hours(list(range(7, 8)), 1))
     ),
     Recipe(
         recipe="economist",
@@ -154,8 +155,19 @@ recipes: List[Recipe] = [
         overwrite_cover=False,
         category="Magazines",
         tags=["business"],
-        enable_on=onlyon_weekdays([4]),
+        enable_on=(onlyon_weekdays([4]) and onlyat_hours(list(range(7, 8)), -5)),
         timeout=360,
+    ),
+    Recipe(
+        recipe="infoq",
+        slug="infoq",
+        src_ext="mobi",
+        target_ext=["epub"],
+        category="Tech News",
+        cover_options=CoverOptions(
+            logo_path_or_url="https://www.infoq.com/images/profiles/3a8e7391f8fe97e0727a8c950c042569.jpg"
+        ),
+        enable_on=(onlyat_hours(list(range(7, 8)), -5)),
     ),
     # Recipe(
     #     recipe="el_pais",
@@ -519,13 +531,13 @@ recipes: List[Recipe] = [
         category="Magazines",
         timeout=300,
         retry_attempts=0,
-        enable_on=first_n_days_of_month(1),
+        enable_on=(first_n_days_of_month(1) and onlyat_hours(list(range(7, 8)), -5)),
         cover_options=CoverOptions(
             logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
         ),
         tags=["nature", "science"],
     ),
-        Recipe(
+    Recipe(
         recipe="natgeohis",
         slug="natgeohis",
         src_ext="mobi",
@@ -533,7 +545,7 @@ recipes: List[Recipe] = [
         category="Magazines",
         timeout=300,
         retry_attempts=0,
-        enable_on=first_n_days_of_month(1),
+        enable_on=(first_n_days_of_month(1) and onlyat_hours(list(range(7, 8)), -5)),
         cover_options=CoverOptions(
             logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
         ),
@@ -562,6 +574,7 @@ recipes: List[Recipe] = [
         category="News",
         timeout=1320,
         retry_attempts=0,
+        enable_on=(onlyat_hours(list(range(7, 8)), -5)),
         cover_options=CoverOptions(
             logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
         ),
@@ -574,7 +587,7 @@ recipes: List[Recipe] = [
         category="Arts & Culture",
         timeout=300,
         retry_attempts=0,
-        enable_on=onlyon_weekdays([5]),
+        enable_on=(onlyon_weekdays([5]) and onlyat_hours(list(range(7, 8)), -5)),
         cover_options=CoverOptions(
             logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
         ),
@@ -587,7 +600,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         category="Magazines",
         overwrite_cover=False,
-        enable_on=onlyon_weekdays([5]),
+        enable_on=(onlyon_weekdays([5]) and onlyat_hours(list(range(7, 8)), -5))
     ),
     # Recipe(
     #     recipe="paris-review-blog",
@@ -705,7 +718,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         category="Magazines",
         tags=["europe", "britain"],
-        enable_on=onlyon_weekdays([4]),
+        enable_on=(onlyon_weekdays([4]) and onlyat_hours(list(range(7, 8)))),
         overwrite_cover=False,
     ),
     Recipe(
@@ -717,6 +730,7 @@ recipes: List[Recipe] = [
         cover_options=CoverOptions(
             logo_path_or_url="https://talcualdigital.com/wp-content/uploads/2019/04/logo_02.png"
         ),
+        enable_on=(onlyat_hours(list(range(7, 8)), -4)),
     ),
     Recipe(
         recipe="time-magazine",
@@ -725,7 +739,7 @@ recipes: List[Recipe] = [
         target_ext=["epub"],
         overwrite_cover=False,
         category="Magazines",
-        enable_on=onlyon_weekdays([0]),
+        enable_on=(onlyon_weekdays([0]) and onlyat_hours(list(range(7, 8)), -5)),
     ),
     # Recipe(
     #     recipe="vox",
