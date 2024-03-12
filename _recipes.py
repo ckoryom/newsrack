@@ -532,9 +532,7 @@ recipes: List[Recipe] = [
         timeout=300,
         retry_attempts=0,
         enable_on=(first_n_days_of_month(1) and onlyat_hours(list(range(7, 8)), -5)),
-        cover_options=CoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
-        ),
+        overwrite_cover=False,
         tags=["nature", "science"],
     ),
     Recipe(
@@ -546,9 +544,7 @@ recipes: List[Recipe] = [
         timeout=300,
         retry_attempts=0,
         enable_on=(first_n_days_of_month(1) and onlyat_hours(list(range(7, 8)), -5)),
-        cover_options=CoverOptions(
-            logo_path_or_url="https://upload.wikimedia.org/wikipedia/commons/0/0a/Natgeo.png"
-        ),
+        overwrite_cover=False,
         tags=["nature", "science"],
     ),
     # Recipe(
@@ -575,9 +571,7 @@ recipes: List[Recipe] = [
         timeout=1320,
         retry_attempts=0,
         enable_on=(onlyat_hours(list(range(7, 8)), -5)),
-        cover_options=CoverOptions(
-            logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
-        ),
+        overwrite_cover=False
     ),
     Recipe(
         recipe="nytimes-books",
@@ -588,9 +582,7 @@ recipes: List[Recipe] = [
         timeout=300,
         retry_attempts=0,
         enable_on=(onlyon_weekdays([5]) and onlyat_hours(list(range(7, 8)), -5)),
-        cover_options=CoverOptions(
-            logo_path_or_url="https://static01.nyt.com/newsgraphics/2015/12/23/masthead-2016/8118277965bda8228105578895f2f4a7aeb22ce2/nyt-logo.png"
-        ),
+        overwrite_cover=False,
         tags=["literature", "books"],
     ),
     Recipe(
