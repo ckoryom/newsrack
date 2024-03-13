@@ -25,7 +25,7 @@ from html5_parser import parse
 from lxml import etree
 
 # For past editions, set date to, for example, '2020-11-28'
-edition_date = '2024-03-02'
+edition_date = None
 
 
 def E(parent, name, text="", **attrs):
