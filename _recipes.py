@@ -572,7 +572,7 @@ recipes: List[Recipe] = [
     #    retry_attempts=0,
     #    enable_on=(onlyat_hours(list(range(7, 8)), -5)),
     #    overwrite_cover=False
-    ),
+    # ),
     Recipe(
         recipe="nytimes-books",
         slug="nytimes-books",
